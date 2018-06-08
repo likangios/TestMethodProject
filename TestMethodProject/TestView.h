@@ -10,4 +10,8 @@
 
 @interface TestView : UIView
 
+@property(nonatomic) CGFloat xScale; // @synthesize xScale=_xScale;
+@property(nonatomic) CGFloat yScale; // @synthesize yScale=_yScale;
+@property(nonatomic) CGFloat angle; // @synthesize angle=_angle;
+@property(nonatomic,assign) BOOL turnOverH;
 @end

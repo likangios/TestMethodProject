@@ -43,15 +43,59 @@
     
     self.origin_x = self.frame.origin.x;
 
-    
-
     self.center_x = self.center.x;
     self.maxX  = self.center.x + self.frame.size.width;
     
     self. origin = atan(0);
-    
+    [self changeWidth:10];
     
 }
+- (void)changeWidth:(CGFloat)width{
+    
+    self.backgroundColor = [UIColor whiteColor];
+    CGFloat v3 = width;
+    CGFloat  v5 = self.bounds.size.width;
+    CGFloat v6 = v3 / v5;
+    CGFloat v8 = v6 / self.xScale;
+    CGFloat v9 = self.xScale;
+    CGFloat v10 = v9 * v8;
+    BOOL  v11 = NO;
+    if (v10 > 0.02 ) {
+        v11 = v10 < 4.0;
+    }
+    else{
+        v11 = NO;
+    }
+    if (v11 ) {
+        self.xScale = v10;
+        CGAffineTransform  rotaion = CGAffineTransformMakeRotation(self.maxX);
+        
+        self.transform = CGAffineTransformScale(rotaion, self.xScale , self.yScale);
+    }
+    BOOL v12 = arc4random()%2;
+    BOOL v13 =  v12 & (v10 > 0.02);
+    
+    if ( v12) {
+        self.xScale = 11;
+        
+    }
+    if ( v13) {
+        self.xScale = 12;
+
+    }
+    [self turnOverHMethod];
+}
+- (void)turnOverHMethod{
+    BOOL v5 = arc4random()%2;
+    
+    self.turnOverH = v5 ^ 1;
+    [self updataContentView];
+    
+}
+- (void)updataContentView{
+    
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
