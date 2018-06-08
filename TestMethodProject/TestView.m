@@ -23,6 +23,13 @@
 
 @implementation TestView
 
++ (id)rotationViewWithItem:(NSDictionary *)item{
+    TestView *test = [[TestView alloc]init];
+    test.item = item;
+    [test configMethod];
+    return test;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame: frame];
     if (self) {
@@ -31,6 +38,8 @@
     }
     return self;
 }
+
+
 - (void)configMethod{
     self.size_height = self.frame.size.height;
     self.origin_y = self.frame.origin.y;

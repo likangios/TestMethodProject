@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    TestView *h = [TestView new];
+    TestView *h = [TestView rotationViewWithItem:@{@"key":@"value"}];
     h.frame = CGRectMake(0, 0, 100, 100);
     [self.view addSubview:h];
 }

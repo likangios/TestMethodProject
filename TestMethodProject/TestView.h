@@ -14,4 +14,6 @@
 @property(nonatomic) CGFloat yScale; // @synthesize yScale=_yScale;
 @property(nonatomic) CGFloat angle; // @synthesize angle=_angle;
 @property(nonatomic,assign) BOOL turnOverH;
+@property(nonatomic,strong) NSDictionary *item;
++ (id)rotationViewWithItem:(NSDictionary *)item;
 @end
