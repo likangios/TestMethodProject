@@ -103,6 +103,28 @@
 }
 - (void)updataContentView{
     
+    NSString *v148 = @"发所发生的\n大范德萨打反倒是案发生的发送\n打死了开发的数量； 打开sad爱迪生所多 ";
+    CGFloat v22 = 22;
+    
+    CGFloat v36 = 39;
+    CGFloat v33 = 39;
+
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:v22],NSFontAttributeName,@(2.0),NSKernAttributeName,nil];
+    
+    CGRect  rect =  [v148 boundingRectWithSize:CGSizeMake(MAXINTERP, MAXINTERP) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    CGFloat v31 = rect.size.height;
+                   
+    while (v22 >0 && v31 > v36) {
+        dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:v22],NSFontAttributeName,@(2.0),NSKernAttributeName,nil];
+        rect =  [v148 boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:dic context:nil];
+        v31 = rect.size.height;
+        if (rect.size.width < v33) {
+            break;
+        }
+        NSLog(@"v22 == %f",v22);
+        v22 -= 1.0;
+    }
+    
 }
 
 /*
