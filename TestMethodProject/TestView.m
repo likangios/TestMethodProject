@@ -125,6 +125,32 @@
         v22 -= 1.0;
     }
     
+    
+    UIFont *font = [UIFont systemFontOfSize:22];
+    
+    UILabel *v61 = [[UILabel alloc]init];
+    v61.font = font;
+    
+    UIGraphicsBeginImageContextWithOptions(self.frame.size,NO,0.5);
+    CGContextRef contextRef =  UIGraphicsGetCurrentContext();
+    CGContextSaveGState(contextRef);
+    
+    CGFloat v186 = CGAffineTransformIdentity.a;
+    CGFloat v187 = CGAffineTransformIdentity.b;
+    CGFloat v188 = CGAffineTransformIdentity.c;
+    CGFloat v189 = CGAffineTransformIdentity.d;
+    CGFloat v190 = CGAffineTransformIdentity.tx;
+    CGFloat v191 = CGAffineTransformIdentity.ty;
+
+    CGContextSetTextMatrix(contextRef, CGAffineTransformMake(1, 2, 3, 4, 5, 6));
+    
+    CGContextScaleCTM(contextRef, 0.5, 0.6);
+
+    CGMutablePathRef muPathRef = CGPathCreateMutable();
+    
+    CGPathAddRect(muPathRef, &CGAffineTransformIdentity, CGRectMake(0, 0, 100, 100));
+
+    UIGraphicsEndImageContext();
 }
 
 /*
